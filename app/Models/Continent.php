@@ -11,4 +11,7 @@ class Continent extends Model
     protected $primaryKey = "continent_id";
     public $timestamps = false;
     use HasFactory;
+    public function regions(){
+        return $this->hasMany(Region::class, 'continent_id');
+    }
 }
